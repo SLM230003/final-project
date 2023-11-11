@@ -15,7 +15,7 @@ I would like to create a code that is like our last lab which was a generated mo
 
 ## Challenges
 - I need to plan out my design because I already know that pygame draws stuff from the top left-hand corner down to the right bottom corner.
-- maybe a more efficient way of making digital rain but if not I will use the instructions our teacher gave us, but I will add custom changes to fit my liking.
+- maybe a more efficient way of making digital rain but if not, I will use the instructions our teacher gave us, but I will add custom changes to fit my liking.
 - How to invert colors simultaneously in a given display so it looks uniform.
 
 ## Outcomes
