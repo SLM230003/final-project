@@ -7,11 +7,11 @@ Inverting Digital Rain Drawing
 I would like to create a code that is like our last lab which was a generated moving artwork. I plan to do something similar by using pygame to make a work of art, and perhaps including digital rain like in Lab C08.
 ## Features
 - Feature 1
-  - Code that uses pygame to make a design of my choosing will fill a good portion of the display.
+  - Code that uses pygame to make a design of my choosing will fill a good portion of the display. I believe it will be executed by determining the cordinates on a given display.
 - Feature 2
-  - Code that makes the digital rain.
+  - Code that makes the digital rain. It will be executed by creating a class for particle, particle trail, and the actual rain function.
 - Feature N
-  - Code to invert the colors using the space bar.
+  - Code to invert the colors using the space bar. I think it will be exectuted by creating a KEYDOWN function to the space bar, and attaching a built in color inversion function.
 
 ## Challenges
 - I need to plan out my design because I already know that pygame draws stuff from the top left-hand corner down to the right bottom corner of the display. I will need to determine a way to navigate all the cordinates on the display.
