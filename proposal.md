@@ -4,17 +4,17 @@ Inverting Digital Rain Drawing
 <https://github.com/SLM230003/final-project.git>
 
 ## Description
-I would like to create a code that is like our last lab which was a generated moving artwork. I plan to do something similar by using pygame to make a work of art, and perhaps including digital rain like in Lab C08.
+I want to create a code like our last lab, which was a generated moving artwork. I plan to do something similar by using pygame to make a work of art, and perhaps including digital rain like in Lab C08.
 ## Features
 - Feature 1
-  - Code that uses pygame to make a design of my choosing will fill a good portion of the display. I believe it will be executed by determining the cordinates on a given display.
+  - Code that uses pygame to make a design of my choosing will fill a good portion of the display. It will be executed by determining the coordinates on a given display.
 - Feature 2
   - Code that makes the digital rain. It will be executed by creating a class for particle, particle trail, and the actual rain function.
 - Feature N
-  - Code to invert the colors using the space bar. I think it will be exectuted by creating a KEYDOWN function to the space bar, and attaching a built in color inversion function.
+  - Code to invert the colors using the space bar. I think it will be executed by creating a KEYDOWN function to the space bar and attaching a built-in color inversion function.
 
 ## Challenges
-- I need to plan out my design because I already know that pygame draws stuff from the top left-hand corner down to the right bottom corner of the display. I will need to determine a way to navigate all the cordinates on the display.
+- I need to plan out my design because I already know that pygame draws stuff from the top left-hand corner down to the right bottom corner of the display. I will need to determine a way to navigate all the coordinates on the display.
 - I will try to find a more efficient way of making digital rain but if not, I will use the instructions our teacher gave us, but I will add custom changes to fit my liking.
 - I will research how to invert colors simultaneously in a given display so it looks uniform.
 
