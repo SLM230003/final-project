@@ -1,6 +1,7 @@
 import random
 import pygame
 import math
+import string
 
 class Particle():
 
@@ -16,7 +17,8 @@ class Particle():
         self.life = life #in mil sec
         self. dead = False #the origin of the partical is not dead
         self.alpha = 255 
-        self.number = random.randint(0, 11) # assign a random number to the particle
+        # self.number = random.randint(0, 11) # assign a random number to the particle
+        self.letter = random.choice(string.ascii_letters) # assign a random letter to the particle
 
     def update(self, dt):
         self.age += dt
@@ -28,7 +30,7 @@ class Particle():
         if self.dead:
             return
         font = pygame.font.Font(None, self.size)
-        text = font.render(str(self.number), True, self.color)
+        text = font.render(str(self.letter), True, self.color)
         text.set_alpha(self.alpha)
         surface.blit(text, self.pos) 
 
