@@ -106,7 +106,7 @@ class Rain():
 
 def main():
     pygame.init() #allows to initiallize the game engine
-    pygame.display.set_caption("Digital Rain") #sets to display a tittle at the top of the window that will open
+    pygame.display.set_caption("Inverting Digital Rain Drawing") #sets to display a tittle at the top of the window that will open
     clock = pygame.time.Clock()
     dt = 0
     resolution = (800, 600) #resolution(width,height)
@@ -232,9 +232,9 @@ def s_symbol(screen):
     pygame.draw.circle(screen, (rainbow), (screen.get_width()//2, screen.get_height()//2), 115) # by 15 pixels each
     pygame.draw.circle(screen, (0, 0, 0), (screen.get_width()//2, screen.get_height()//2), 110) # by 10 pixels each
 
-    pygame.draw.circle(screen, (255, 0, 0), (screen.get_width()//2, screen.get_height()//2), 100)
+    pygame.draw.circle(screen, (rainbow), (screen.get_width()//2, screen.get_height()//2), 100)
     pygame.draw.circle(screen, (0, 0, 0), (screen.get_width()//2, screen.get_height()//2), 95)
-    pygame.draw.circle(screen, (255, 0, 0), (screen.get_width()//2 - 10, screen.get_height()//2), 37)
+    pygame.draw.circle(screen, (rainbow), (screen.get_width()//2 - 10, screen.get_height()//2), 37)
     pygame.draw.circle(screen, (0, 0, 0), (screen.get_width()//2 - 10, screen.get_height()//2), 32)
 
 
@@ -263,11 +263,12 @@ def s_symbol(screen):
             (x - side_length // 2, y + side_length // 2)]
 
     #code for triangle
-    pygame.draw.polygon(screen, (255, 0, 0), [point1, point2, point3], 5)
+    pygame.draw.polygon(screen, (rainbow), [point1, point2, point3], 5)
     #Code for square
-    pygame.draw.polygon(screen, (255, 0, 0), points, 5)
+    pygame.draw.polygon(screen, (rainbow), points, 5)
 
-
+def face(screen):
+    pygame.draw.circle(screen, (0, 0, 0), (screen.get_width()//2, screen.get_height()//2), 95)
 
 if __name__ == "__main__":
     main()
