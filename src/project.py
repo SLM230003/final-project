@@ -16,24 +16,21 @@ class Particle():
         self.life = life #in mil sec
         self. dead = False #the origin of the partical is not dead
         self.alpha = 255 
-        self.surface = self.update_surface() #update surface
+        self.number = random.randint(0, 11) # assign a random number to the particle
 
     def update(self, dt):
         self.age += dt
         if self.age > self.life: 
             self.dead = True
         self.alpha = 255 * (1 - (self.age / self.life))
-
-    def update_surface(self): 
-        surf = pygame.Surface((self.size*0.8, self.size*0.8))
-        surf.fill(self.color)
-        return surf 
     
     def draw(self, surface):
         if self.dead:
             return
-        self.surface.set_alpha(self.alpha)
-        surface.blit(self.surface, self.pos) 
+        font = pygame.font.Font(None, self.size)
+        text = font.render(str(self.number), True, self.color)
+        text.set_alpha(self.alpha)
+        surface.blit(text, self.pos) 
 
 
 class ParticleTrail():
