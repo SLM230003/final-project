@@ -17,7 +17,6 @@ class Particle():
         self.life = life #in mil sec
         self. dead = False #the origin of the partical is not dead
         self.alpha = 255 
-        # self.number = random.randint(0, 11) # assign a random number to the particle
         self.letter = random.choice(string.ascii_letters) # assign a random letter to the particle
 
     def update(self, dt):
@@ -26,13 +25,13 @@ class Particle():
             self.dead = True
         self.alpha = 255 * (1 - (self.age / self.life))
     
-    def draw(self, surface):
+    def draw(self, surs_drawing):
         if self.dead:
             return
         font = pygame.font.Font(None, self.size)
         text = font.render(str(self.letter), True, self.color)
         text.set_alpha(self.alpha)
-        surface.blit(text, self.pos) 
+        surs_drawing.blit(text, self.pos) 
 
 
 class ParticleTrail():
@@ -60,9 +59,9 @@ class ParticleTrail():
         y += self.size
         self.pos = (x, y)
 
-    def draw(self, surface):
+    def draw(self, surs_drawing):
         for particle in self.particles:
-            particle.draw(surface)
+            particle.draw(surs_drawing)
 
 
 class Rain():
@@ -98,9 +97,9 @@ class Rain():
             trail = ParticleTrail(pos, self.particle_size, life)
             self.trails.insert(0, trail)
 
-    def draw(self, surface):
+    def draw(self, surs_drawing):
         for trail in self.trails:
-            trail.draw(surface)
+            trail.draw(surs_drawing)
 
 
 def main():
@@ -109,12 +108,12 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
     resolution = (800, 600) #resolution(width,height)
-    screen = pygame.display.set_mode(resolution) #makes a display and uses the reslution varriable to set the size instead of repeating over and over #since set_mode returns a function surface you set the wholw code in a variable to set the surface
+    screen = pygame.display.set_mode(resolution) #makes a display and uses the reslution varriable to set the size instead of repeating over and over #since set_mode returns a function surs_drawing you set the wholw code in a variable to set the surs_drawing
     rain = Rain(resolution)
     running = True 
 
-    show_face = True
-    show_symbol = False
+    show_drawing = True
+    show_colors = False
 
     while running:
         #event loop 
@@ -124,8 +123,8 @@ def main():
 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    show_symbol = not show_symbol
-                    show_face = not show_face
+                    show_colors = not show_colors
+                    show_drawing = not show_drawing
 
         # game logic
         rain.update(dt)
@@ -133,10 +132,10 @@ def main():
         black = pygame.Color(0, 0, 0)
         screen.fill(black) #color of background
 
-        if show_symbol:
-            s_symbol(screen)
-        if show_face:
-            face(screen)
+        if show_colors:
+            s_colors(screen)
+        if show_drawing:
+            s_drawing(screen)
 
         rain.draw(screen)
         pygame.display.flip() #allows for flip function which allows for the code to make in a sense a flip book
@@ -146,7 +145,7 @@ def main():
     pygame.quit() #clean up in order to shut down cleanly
 
 
-def face(screen):
+def s_drawing(screen):
     pygame.draw.circle(screen, (255,255,255), (screen.get_width()//2, screen.get_height()//2), 490) # by 15 pixels each
     pygame.draw.circle(screen, (0, 0, 0), (screen.get_width()//2, screen.get_height()//2), 485) # by 15 pixels each
 
@@ -264,7 +263,7 @@ def face(screen):
 
 
 
-def s_symbol(screen):
+def s_colors(screen):
     rainbow = pygame.Color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
     #Code for outer circle
